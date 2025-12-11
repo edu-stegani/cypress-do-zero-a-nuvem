@@ -9,7 +9,7 @@ Cypress.Commands.add('fillMandatoryFieldsAndSubmit', (
     cy.get('#firstName').type(data.firstName).should('have.value', data.firstName)   
     cy.get('#lastName').type(data.lastName).should('have.value', data.lastName)
     cy.get('#email').type(data.email).should('have.value', data.email)
-    cy.get('#open-text-area').type(data.textArea).should('have.value', data.textArea)
+    cy.get('#open-text-area').type(data.textArea, {delay: 0}).should('have.value', data.textArea)
     cy.contains('button', 'Enviar').click()
 }) 
 
